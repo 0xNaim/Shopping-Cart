@@ -32,6 +32,9 @@ const phoneDecrease = document.getElementById("phoneDecrease").addEventListener(
 		// phone price insert
 		const phoneNewPrice = (phoneCurrentPrice.innerText = `$${phoneTotal}`);
 	}
+	else {
+		alert("Hey! Negative value not allow...!")
+	}
 
 	// function called
 	calculateTotal();
@@ -71,6 +74,9 @@ const caseDecrease = document.getElementById("caseDecrease").addEventListener("c
 		// case price insert
 		const caseNewPrice = (caseCurrentPrice.innerText = `$${caseTotal}`);
 	}
+	else {
+		alert("Hey! Negative value not allow...!")
+	}
 
 	// function called
 	calculateTotal();
@@ -91,6 +97,12 @@ const calculateTotal = () => {
 
 	// tax calculate
 	const tax = document.getElementById("totalTax");
+	// tax 3%
 	const totalTax = (subTotal * 3) / 100;
 	const newTotalTax = (tax.innerText = `$${totalTax}`);
+
+	// total price calculate
+	const totalPrice = document.getElementById("grandTotal");
+	const grandTotal = subTotal + totalTax;
+	const newGrandTotal = (totalPrice.innerText = `$${grandTotal}`);
 };
